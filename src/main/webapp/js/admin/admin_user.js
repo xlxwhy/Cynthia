@@ -112,8 +112,8 @@ function changeStat(user,changeToStat)
 				{
 					//如果帐户重新恢复正常,邮件通知
 					var params = "sendMailReceivers=" + getSafeParam(user);
-					params += "&sendMailSubject=" + getSafeParam("[Cynthia]帐户激活通知");
-					params += "&sendMailContent=" + getSafeParam("您在Cynthia中的帐户己激活！<br/><a href='" + WEB_ROOT_URL+ "'>立即进入</a>");
+					params += "&sendMailSubject=" + getSafeParam("[MWT-Tracker]帐户激活通知");
+					params += "&sendMailContent=" + getSafeParam("您在MWT-Tracker中的帐户己激活！<br/><a href='" + WEB_ROOT_URL+ "'>立即进入</a>");
 
 					$.ajax({
 						url : base_url + 'mail/executeSendMail.jsp',
@@ -226,14 +226,14 @@ function deleteTemplateRight(templateId)
 function initAllTemplate()
 {
 	$("#userTemMail").val($("#userMail").val());
-	$("#initAllTitle").html("添加表单权限:&nbsp;&nbsp;<span class=\"label label-important\">(" +$("#userMail").val()+")</span>");
+	$("#initAllTitle").html("添加模板权限:&nbsp;&nbsp;<span class=\"label label-important\">(" +$("#userMail").val()+")</span>");
 	$.ajax({
 		url : base_url + 'backRight/getAllTemplate.do',
 		type : 'POST',
 		dataType:'json',
 		success :function(data){
 			var gridHtml = '';
-			gridHtml += "<option value=''>选择权限表单</option>"; 
+			gridHtml += "<option value=''>选择权限模板</option>"; 
 			for(templateId in data){
 				gridHtml += "<option value= "+templateId+">" + data[templateId] + "</option>"; 
 			}
@@ -253,7 +253,7 @@ function addUserTemplate()
 	var addTemplateId = $("#chooseTemplate").val();
 	if(addTemplateId == "" || addTemplateId == null)
 	{
-		alert("请选择表单!");
+		alert("请选择模板!");
 		return;
 	}
 	
@@ -321,8 +321,8 @@ function addUser()
 			
 			//新建用户成功，发送邮件通知
 			var params = "sendMailReceivers=" + getSafeParam(email);
-			params += "&sendMailSubject=" + getSafeParam("[Cynthia]帐户新建通知");
-			params += "&sendMailContent=" + getSafeParam("管理员为您新建了Cynthia帐户！<br/>用户名：" + email + "<br/>密码:" + password + "<br/><a href='" + WEB_ROOT_URL+ "'>点击进入Cynthia缺陷管理系统</a>");
+			params += "&sendMailSubject=" + getSafeParam("[MWT-Tracker]帐户新建通知");
+			params += "&sendMailContent=" + getSafeParam("管理员为您新建了MWT-Tracker帐户！<br/>用户名：" + email + "<br/>密码:" + password + "<br/><a href='" + WEB_ROOT_URL+ "'>点击进入MWT-Tracker系统</a>");
 
 			$.ajax({
 				url : base_url + 'mail/executeSendMail.jsp',
@@ -478,7 +478,7 @@ function checkUser()
 $(function(){
 	
 	bindEvents();
-	//初始化表单列表
+	//初始化模板列表
 	$("#userListGrid").tablesorter({
 		headers: 
 		{ 

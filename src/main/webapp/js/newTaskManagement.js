@@ -16,9 +16,9 @@ var gridIndex = -1;
 var url = null;
 var editor = null;
 var lastActionRoles = null;  //下一步的角色id
-var isProTemplate = false;  //是否为项目管理表单
-var productInvolvedId = null; //项目管理关联产品字段id
-var projectInvolvedId = null; //项目管理关联项目字段id
+var isProTemplate = false;  //是否为模板管理模板
+var productInvolvedId = null; //模板管理关联产品字段id
+var projectInvolvedId = null; //模板管理关联模板字段id
 var dataTagArray = new Array();
 var base_url = getRootDir();
 
@@ -218,9 +218,9 @@ function onCompleteInitTaskManagement(request,type)
 		baseFieldForm +=   	"<input type='text' id='input_taskTitle' placeholder='标题' class='span10' />";
 		baseFieldForm +=    "</div>";
 		baseFieldForm +=  "</div>";
-		//项目名称
+		//模板名称
 		baseFieldForm += "<div class='control-group'>";
-		baseFieldForm += 	"<label class='control-label span2' for='select_template'>项目名称:</label>";
+		baseFieldForm += 	"<label class='control-label span2' for='select_template'>模板名称:</label>";
 		baseFieldForm +=   "<div class='controls'>";
 		baseFieldForm +=   	"<select id='select_template' class='span10' onChange='selectTemplate()'>";
 		baseFieldForm +=       	"<option value='' "+(selectedTemplate == null ? " selected" : "")+">--请选择--</option>";
@@ -370,7 +370,7 @@ function onCompleteInitTaskManagement(request,type)
 		topSubmitDiv += "</div>";
 		
 		topSubmitDiv += "<div class='btn-group'>";
-		topSubmitDiv += 	"<button class='btn btn-primary' onClick='setUserDefaultTemplate()'>设为默认表单</button>";
+		topSubmitDiv += 	"<button class='btn btn-primary' onClick='setUserDefaultTemplate()'>设为默认模板</button>";
 		topSubmitDiv += "</div>";
 		
 		$("#topSubmitDiv").html(topSubmitDiv);
@@ -817,11 +817,11 @@ function getBaseFieldFormHtml(task)
 		baseFieldForm +=  "</div>";
 	}
 	
-	//项目
+	//模板
 	baseFieldForm += "<div class='control-group'>";
-	baseFieldForm += 	"<label class='control-label span2' for='input_taskTemplateName'>项目:</label>";
+	baseFieldForm += 	"<label class='control-label span2' for='input_taskTemplateName'>模板:</label>";
 	baseFieldForm +=   "<div class='controls'>";
-	baseFieldForm +=   	"<input type='text' id='input_taskTemplateName' placeholder='项目' class='span10 onlyRead' value='"+getXMLStr(task.templateName)+"' readOnly/>";
+	baseFieldForm +=   	"<input type='text' id='input_taskTemplateName' placeholder='模板' class='span10 onlyRead' value='"+getXMLStr(task.templateName)+"' readOnly/>";
 	baseFieldForm +=    "</div>";
 	baseFieldForm +=  "</div>";
 	
@@ -893,7 +893,7 @@ function setDefaultTemplate()
 		deleteCookie("template");
 	else
 		createCookie("template=" + templateId);
-	showInfoWin('success','默认表单设置成功!');
+	showInfoWin('success','默认模板设置成功!');
 }
 
 function setDefaultAssignUserRead()
@@ -1404,14 +1404,14 @@ function executeSubmit(closeWindow)
 		var templateId = $("#select_template").val();
 		if(templateId == "")
 		{
-			alert("请选择项目名称！如果没有可以选择的项目，请先建立项目！");
+			alert("请选择模板名称！如果没有可以选择的模板，请先建立模板！");
 			return setSubmitDivDisable(false);
 		}
 
 		var selectActionId = $("#select_action").val();
 		if(selectActionId == "")
 		{
-			alert("请选择动作名称！如果没有可以选择的动作，表明您在当前项目当前状态下没有执行权限！");
+			alert("请选择动作名称！如果没有可以选择的动作，表明您在当前模板当前状态下没有执行权限！");
 			return setSubmitDivDisable(false);
 		}
 
@@ -1697,7 +1697,7 @@ function getFieldMust(field)
 		return getFieldMust(getFieldById(field.controlFieldId));
 	}
 
-	//项目管理表单 对应产品 与对应项目是必填项！！
+	//模板管理模板 对应产品 与对应模板是必填项！！
 	if(isProTemplate && ( field.id == productInvolvedId || field.id == projectInvolvedId )){
 		return true;
 	}
@@ -1927,7 +1927,7 @@ function onCompleteInitBizAssignUsers(request)
 }
 
 /**
- * 设置对应项目
+ * 设置对应模板
  * @param data 
  */
 function setProducts(data){
@@ -1956,14 +1956,14 @@ function setProducts(data){
 }
 
 /**
- * 设置对应项目
+ * 设置对应模板
  * @param projectId
  */
 function setProjects(productId){
 	var field = getFieldById(productInvolvedId);
 	if(field){
 		$('#field' + field.id).val(productId);
-		//更新对应项目
+		//更新对应模板
 		$.ajax({
 			url : base_url + 'project/getProjects.do',
 			dataType : 'json',
@@ -1974,7 +1974,7 @@ function setProjects(productId){
 }
 
 /**
- * 项目管理设置指派人
+ * 模板管理设置指派人
  * @param projectId
  * @param actionId
  * @returns
@@ -2382,7 +2382,7 @@ function drawFieldsArea(node)
 	layoutContent = layoutContent + bugsOfCurrentTaskField;
 	$("#layoutContent").html(layoutContent);
 
-	/***项目管理默认值设置时特殊处理************/
+	/***模板管理默认值设置时特殊处理************/
 	if(isProTemplate && operation != 'read'){
 		var fieldProduct = getFieldById(productInvolvedId);
 		if(fieldProduct){
@@ -2393,7 +2393,7 @@ function drawFieldsArea(node)
 		setAssignUserByProjectIdAndRoles($('#field' + fieldProject.id).val(),actionId,false);
 	}
 
-	/***项目管理默认值设置时特殊处理************/
+	/***模板管理默认值设置时特殊处理************/
 	
 	enableSelectSearch();
 }
@@ -3554,7 +3554,7 @@ function onCompleteInitTaskAssignUsers(request)
 		hideSetDefaultAssignUser();
 		drawFieldsArea(drawRootNode);
 		
-		//项目管理新建bug
+		//模板管理新建bug
 		if(operation == 'create'){
 			var productId = cynthia.url.getQuery('productId');
 			var projectId = cynthia.url.getQuery('projectId');
@@ -3854,7 +3854,7 @@ function setUserDefaultTemplate()
 		data : params,
 		dataType : 'xml'
 	}).done(function(response){
-		alert("默认表单设置成功!");
+		alert("默认模板设置成功!");
 	}).fail(function(response){
 		alert("ERROR!");
 	});
@@ -4096,7 +4096,7 @@ function sendMailSubmit()
 	sendMailContent += "</body><html>";
 
 	var params = "sendMailReceivers=" + getSafeParam(sendMailReceivers);
-	params += "&sendMailSubject=" + getSafeParam("[Cynthia][" + taskId + "]有数据需要您的处理意见，请关注并处理");
+	params += "&sendMailSubject=" + getSafeParam("[MWT-Tracker][" + taskId + "]有数据需要您的处理意见，请关注并处理");
 	params += "&sendMailContent=" + getSafeParam(sendMailContent);
 
 	$("#mail_send_ok").disabled = true;
@@ -4137,7 +4137,7 @@ $(function(){
 	//bindFieldTip();
 	bindLabelClick();
 	bindButtonClick();
-	//获取默认新建表单
+	//获取默认新建模板
 	$.ajax({
 		url : 'filterManage/initUserDefaultTemplate.jsp',
 		dataType : 'xml'

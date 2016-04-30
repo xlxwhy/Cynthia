@@ -15,7 +15,7 @@ function initFilterPageFirst(filterId,filterName)
 	$("#template_user_restTemplateUserSelect").empty();
 	$("#template_user_selectedTemplateUserSelect").empty();
 	$("#timerName,#nameList,#ccList,#bccList").val("");
-	$("#mailTitle").val("[Cynthia][" + filterName + "]");
+	$("#mailTitle").val("[MWT-Tracker][" + filterName + "]");
 	//初始化月份
 	$("#timer_div").hide();	
 	$("#timer_no").attr("checked",true);
@@ -77,12 +77,12 @@ function onCompleteInitFilterPage(data,textStatus)
 	var filterNameNode = $(queryNode).find("filterName");
 	$("#input_filter_name").val("");
 	$("#input_filter_name").val($(filterNameNode).text());
-	document.title = $(filterNameNode).text()+'-Cynthia';
+	document.title = $(filterNameNode).text()+'-MWT-Tracker';
 	//设置templateType
 	var templateTypeId = $(queryNode).find("templateType").attr("id");
 	$("#templateTypeSelect").val(templateTypeId);
 	
-	//设置表单templates
+	//设置模板templates
 	var templateId = $(queryNode).children("template").attr("id");
 	$("#templates").empty();
 	$(queryNode).find("templates").find("template").each(function(index,node){
@@ -95,7 +95,7 @@ function onCompleteInitFilterPage(data,textStatus)
 		selected = "";
 	});
 	
-	//设置表单fields
+	//设置模板fields
 	$("#fields").empty();
 	$("#fields").append("<option value=''>---请选择---</option>");
 	$(queryNode).find("fields").find("field").each(function(index,node){
@@ -595,7 +595,7 @@ function getFilterParams(){
 function executeSubmit(type)
 {
 	if($("#templateTypeSelect").val()==""){
-		alert("请选择表单类型！");
+		alert("请选择模板类型！");
 		return;
 	}
 				
@@ -604,7 +604,7 @@ function executeSubmit(type)
 		return;
 	}
 	if(trim($("#templates").val())==""){
-		alert("请选择表单");
+		alert("请选择模板");
 		return;
 	}
 	

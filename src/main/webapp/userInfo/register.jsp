@@ -12,26 +12,23 @@
 	<script type="text/javascript" src="../js/util.js"></script>
 	<script type="text/javascript" src="../js/user/userinfo.js"></script>
 	<script type="text/javascript" src="../js/md5.js"></script>
-	<title>脚本</title>
+	<title>注册</title>
 </head>
 <body>
-	<div class="container-fluid" style="margin-top:150px;">
+	<div class="container-fluid" >
 		<div class="row-fluid">
-			<div class="span2">
-			</div>
-			<div class="span6">
-				<img alt="140x140" src="../images/team.jpg" class="img-rounded" />
-			</div>
-			<div class="span4">
-			
-			<div id="logo_header">
-				<img alt="" src="../images/logo.png" />
-				<b style="font-size:15px; padding: 10px 10px 0px;margin-left:0px;">专心、专注、专业</b>
+
+		  <center>
+
+		  <div style="text-align:left;width:600px;background-color:#DDD;" > 
+			<div id="logo_header" style="background-color:#999;line-height:50px;color:#FFF;">
+			    <img alt="" src="../images/mwt.png"> 
 			</div>
 			
+			<div style="padding-left:150px;">
 			<div class="control-group">
 				    <div class="controls">
-				      <input type="text" id="userMail" placeholder="邮箱"> &nbsp;&nbsp;<span id="mailInfo" style="color:red"><span>
+				      <input type="text" id="userMail" placeholder="邮箱"><span id="mailInfo" style="color:red"><span>
 				    </div>
 			</div>
 			
@@ -56,13 +53,20 @@
 			<div class="control-group">
 				    <div class="controls">
 				      <div id="login">
-					      <button type="button" id="register" class="btn btn-danger">注册</button>
-					      <button type="button" id="login_btn" style="margin-left:50px;" class="btn">登录</button>
+					      <button type="button" id="login_btn" class="btn " style="margin-left:10px;" class="btn">我要去登录</button>
+					      <button type="button" id="register" class="btn btn-success">我要注册</button>
 				      </div>
 				    </div>
 			</div>
+			
 			</div>
+			
+			<br>
+			</div>
+		
+		  </center>
 		</div>
+	  </div>
 	</div>
 </body>
 </html>

@@ -52,7 +52,7 @@ public class ConfigUtil {
 
 	public static Map<String, String> baseFieldIdMap = new HashMap<String, String>();
 
-	public static Set<String> abandonTemplateIdSet = new HashSet<String>(); // 废弃的表单
+	public static Set<String> abandonTemplateIdSet = new HashSet<String>(); // 废弃的模板
 
 	static {
 		baseFieldNameMap.put("id", "编号");

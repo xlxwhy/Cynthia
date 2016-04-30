@@ -2,9 +2,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="Description" content="Cynthia项目缺陷管理系统，拥有表单流程化设计，可视化拖动布局等功能，提供项目管理，缺陷管理，，统计，查询等服务，是您项目上的好帮手！">
+<meta name="Description" content="Cynthia项目缺陷管理系统，拥有模板流程化设计，可视化拖动布局等功能，提供项目管理，缺陷管理，，统计，查询等服务，是您项目上的好帮手！">
 <meta name="Keywords" content="Cynthia,BUG管理,项目管理 ,缺陷管理,任务管理,BUG,缺陷,开源">
-<title>Cynthia 欢迎您!</title>
+<title>MWT-Tracker</title>
 <link href="../lib/bootstrap2/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="../lib/bootstrap2/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
 <link href="../lib/g_bootstrap/css/google-bootstrap.css" rel="stylesheet" type="text/css">
@@ -121,19 +121,19 @@
 </div>
 
 
-<!-- 用户表单权限 -->
+<!-- 用户模板权限 -->
 <div id="userTemRightDiv" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="tag modal" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h5>用户表单权限</h5>
+    <h5>用户模板权限</h5>
   </div>
   <div class="modal-body">
   	 <input type="hidden" id = "userMail"/>
-  	 <input type="button" class="btn btn-danger" value="添加表单" onclick="initAllTemplate();"/>
+  	 <input type="button" class="btn btn-danger" value="添加模板" onclick="initAllTemplate();"/>
   	 <table style="margin-top:10px;" class="tablesorter table table-hover table-striped">
 				<thead>
 		    		<tr>
-		    			<th>序号</th><th>表单名称</th><th>删除</th>
+		    			<th>序号</th><th>模板名称</th><th>删除</th>
 		    		</tr>
 		    	</thead>
 		    	<tbody id="temRightBody">
@@ -146,17 +146,17 @@
 </div>
 
 
-<!-- 添加表单 -->
+<!-- 添加模板 -->
 <div id="initAllTemDiv" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="tag modal" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h5 id="initAllTitle">添加表单</h5>
+    <h5 id="initAllTitle">添加模板</h5>
   </div>
   <div class="modal-body">
   	<form class="form-horizontal">
 	  	 <input type="hidden" id="userTemMail"/>
 	  	 <div class="control-group">
-	  	 	 <label style="width:120px;" class="control-label" for="chooseTemplate">选择添加权限表单:</label>
+	  	 	 <label style="width:120px;" class="control-label" for="chooseTemplate">选择添加权限模板:</label>
 	  	 	 <div class="controls">
 			  	 <select style="width:250px; margin-left:-50px;" multiple id= "chooseTemplate">
 			  	 </select>

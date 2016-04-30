@@ -8,7 +8,7 @@ import com.sogou.qadev.service.cynthia.dao.FieldNameAccessSessionMySQL;
 import com.sogou.qadev.service.cynthia.util.ConfigUtil;
 
 /**
- * 表单中字段在数据库中对应关系的缓存处理
+ * 模板中字段在数据库中对应关系的缓存处理
  * @author liming
  *
  */

@@ -12,7 +12,7 @@
 	<script type="text/javascript" src="../js/util.js"></script>
 	<script type="text/javascript" src="../js/user/userinfo.js"></script>
 	<script type="text/javascript" src="../js/md5.js"></script>
-	<title>Cynthia-登陆</title>
+	<title>MWT-Tracker登陆</title>
 </head>
 
 <%
@@ -22,19 +22,17 @@
 	loginErrorInfo = loginErrorInfo == null ? "" : loginErrorInfo;
 %>
 
-<body onload="initUser('<%=targetUrl%>','<%=loginErrorInfo %>');">
-	<div class="container-fluid" style="margin-top:150px;">
-		<div class="row-fluid">
-			<div class="span2">
-			</div>
-			<div class="span6">
-				<img alt="140x140" src="../images/team.jpg" class="img-rounded" />
-			</div>
-			<div class="span4">
-			
-			<div id="logo_header">
-				<img alt="" src="../images/logo.png" />
-				<b style="font-size:15px; padding: 10px 10px 0px;margin-left:0px;">专心、专注、专业</b>
+<body onload="initUser('<%=targetUrl%>','<%=loginErrorInfo %>');" style="height:100%">
+
+  <table  height="100%" width="100%" style="height:100%"><tr><td valign="center">
+	<div class="container-fluid" style="width:100%; ">
+		<div class="row-fluid" style="text-align:center;width:100%;">
+	  
+		  <center>
+
+		  <div style="text-align:center;width:600px;background-color:#DDD;" > 
+			<div id="logo_header" style="background-color:#999;line-height:50px;color:#FFF;">
+			    <img alt="" src="../images/mwt.png"> 
 			</div>
 			<div class="control-group">
 				    <div class="controls">
@@ -53,13 +51,20 @@
 				  <div class="control-group">
 					   <div class="controls">
 					      <div id="login">
-						      <button id="login_in_btn" class="btn btn-danger">登录</button>
-						      <a href="register.jsp" style="margin-left:50px;">注册</a> 
+						      <button id="login_in_btn" class="btn btn-danger">登&nbsp;录</button>
+						      <a href="register.jsp" class="btn btn-success"  style="margin-left:10px;">注&nbsp;册</a> 
 				      	  </div>
 				       </div>
 				</div>
+				<br>
 			</div>
-		</div>
+	       
+	     </center>
+	     </div>
+	     
+	    
 	</div>
+  </td></tr></table>
+
 </body>
 </html>

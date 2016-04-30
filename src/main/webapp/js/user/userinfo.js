@@ -3,6 +3,12 @@
 /********用户注册开始****/
 function register(){
 	var userMail = trim($("#userMail").val());
+	if(!valid_email(userMail))
+	{
+		$("#mailInfo").text("邮箱格式不正确!");
+		return;
+	}
+	
 	var userPassword = trim($("#userPassword").val());
 	checkLoginInfo(userMail,userPassword);
 	var userPasswordAgain = trim($("#userPasswordAgain").val());

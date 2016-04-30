@@ -2158,7 +2158,7 @@ function initFavoriteFilterMenu(data)
 	});
 }
 
-//新建默认表单
+//新建默认模板
 function openDefaultTemplate(e){
 	var defaultTemplateId = null;
 	var defaultTemplateTypeId = null;

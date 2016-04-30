@@ -30,7 +30,7 @@
          <property name="suffix" value=".jsp" />
       </bean>
 
-    <!-- 表单模板部分 -->
+    <!-- 模板模板部分 -->
     <bean id="getAllTemplatesController" class="com.sogou.qadev.service.cynthia.controller.GetAllTemplatesController">
     </bean>
     <bean id="getTemplatesByTemplateTypeController" class="com.sogou.qadev.service.cynthia.controller.GetTemplatesByTemplateTypeController">

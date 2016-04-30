@@ -1450,7 +1450,7 @@ function logout()
 	deleteCookie('id');
 	deleteCookie('login_username');
 	deleteCookie('login_nickname');
-	if(!window.confirm("确定要退出Cynthia吗？"))
+	if(!window.confirm("确定要退出MWT-Tracker吗？"))
 		return;
 	window.location = base_url + 'user/logout.do?isReturn=true&targetUrl=' + encodeURIComponent(window.location.href);
 }
@@ -1627,16 +1627,19 @@ function addHeadHtml(userInfo)
 {
 	var headHtml = "";
 	headHtml += "<div class=\"row-fluid navbar navbar-fixed-top\">";
-	headHtml += "<div class=\"container\" style=\"width:100%;\">";
+	headHtml += "<div class=\"container\" style=\"width:100%;font-family: 'Microsoft Yahei', Arial, Helvetica, sans-serif;\">";
 	//图片logo链接
-	headHtml += "<a href='" + base_url + "index.html' class='pull-left'><img src='" + base_url + "images/logo.png' style='width:65px;min-width:65px;height:40px;margin-left: 20px;'/></a>"; 
+	//headHtml += "<a href='" + base_url + "index.html' class='pull-left'><img src='" + base_url + "images/logo.png' style='width:65px;min-width:65px;height:40px;margin-left: 20px;'/></a>"; 
 	//专心专注专业
-	headHtml += "<a class=\"brand\" href='" + base_url + "index.html' style=\"font-size:14px;color:#666;padding: 10px 10px 0px;margin-left:0px;\">专心、专注、专业</a>";
+	headHtml += "";
+	
+	//headHtml += "<div class='left' style=\"text-align:center;background:#FFF url('images/mwt.png') no-repeat 0 0 fixed;\" ><a class=\"brand\" href='" + base_url + "index.html' style=\"font-size:16px;color:rgb(216, 74, 56);font-weight:bold;line-height:30px; \">MWT-Tracker</a> </div>";
+	headHtml += "<div class='left' style=\"text-align:center;\" ><a class=\"brand\" href='" + base_url + "index.html' style=\"font-size:16px;color:rgb(216, 74, 56);font-weight:bold;line-height:30px; \"><img src='" + base_url + "images/mwt.png' width='160'   /></a> </div>";
     
 	//搜索框
 	if(judgeNeedSearch())
 	{
-		headHtml += "<div class=\"input-append pull-left middle\">";
+		headHtml += "<div class=\"input-append middle pull-left \"  style=\" margin-left:0px;padding-top:0px;\" >";
 		headHtml += "<select id =\"searchType\" class=\"noSearch\" style=\"width:80px;line-height:24px;\" onchange=\"onSearchTypeChange();\">";
 		headHtml += "<option value=\"id\">编号</option>";
 		headHtml += "<option value='title'>标题</option>";
@@ -1650,6 +1653,10 @@ function addHeadHtml(userInfo)
 	//右部导航菜单
 	headHtml += "<div class=\"nav-collapse collapse navbar-inverse-collapse\">";
 	headHtml += "<ul class=\"nav pull-right\" style=\"margin-right:20px;\">";
+	
+	headHtml += "<li><a href=\"" + base_url + "index.html\" target=\"_self\">首页</a></li>";
+	headHtml += "<li><a href=\"#\">|</a></li>";
+	
 	headHtml += "<li><a href=\"" + base_url + "editFilter.html\" target=\"_self\">过滤器</a></li>";
 	headHtml += "<li><a href=\"#\">|</a></li>";
 	
@@ -1674,7 +1681,7 @@ function addHeadHtml(userInfo)
 	headHtml += "<a href='#' class='dropdown-toggle' data-toggle='dropdown'>更多<b class='caret'></b></a>";
 	headHtml += "<ul class='dropdown-menu'>";
 	headHtml += "<li><a href='" + base_url + "about.html' target='_self'>关于</a></li>";
-	headHtml += "<li><a href='mailto:cynthiafb@sogou-inc.com&subject=cynthia使用反馈' target='_self'>反馈建议</a></li>";
+	//headHtml += "<li><a href='mailto:cynthiafb@sogou-inc.com&subject=cynthia使用反馈' target='_self'>反馈建议</a></li>";
 	headHtml += "<li><a href='" + base_url + "guide.html?guideId=start' target='_self'>使用说明</a></li>";
 	headHtml += "</ul>";
 	headHtml += "</li>";

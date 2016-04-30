@@ -164,7 +164,7 @@
 		
 		field.setActionIds(actionIdSet);
 		
-		//先添加字段，再更新表单
+		//先添加字段，再更新模板
 		String fieldColName = FieldNameMapMySQL.getInstance().getOneFieldName(field, template.getId().getValue());
 		if(fieldColName == null || fieldColName.length() == 0 ){
 			out.println(ErrorManager.getErrorXml(ErrorType.field_update_error));

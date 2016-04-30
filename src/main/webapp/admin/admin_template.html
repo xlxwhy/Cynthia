@@ -2,9 +2,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="Description" content="Cynthia项目缺陷管理系统，拥有表单流程化设计，可视化拖动布局等功能，提供项目管理，缺陷管理，，统计，查询等服务，是您项目上的好帮手！">
+<meta name="Description" content="Cynthia项目缺陷管理系统，拥有模板流程化设计，可视化拖动布局等功能，提供项目管理，缺陷管理，，统计，查询等服务，是您项目上的好帮手！">
 <meta name="Keywords" content="Cynthia,BUG管理,项目管理 ,缺陷管理,任务管理,BUG,缺陷,开源">
-<title>Cynthia 欢迎您!</title>
+<title>MWT-Tracker</title>
 <link href="../lib/bootstrap2/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="../lib/bootstrap2/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
 <link href="../lib/g_bootstrap/css/google-bootstrap.css" rel="stylesheet" type="text/css">
@@ -27,13 +27,13 @@
 	<div class="row-fluid">
 		<div class="span12 template_toolbar">
 			
-			<button class="btn btn-danger btn-create project_involved_false" type="button" onclick="displayCreateDiv(false)">新建表单</button>
+			<button class="btn btn-danger btn-create project_involved_false" type="button" onclick="displayCreateDiv(false)">新建模板</button>
 			
 			<div class="btn-group project_involved_true">
-                <button class="btn btn-danger dropdown-toggle" data-toggle="dropdown">新建表单<span class="caret"></span></button>
+                <button class="btn btn-danger dropdown-toggle" data-toggle="dropdown">新建模板<span class="caret"></span></button>
                 <ul class="dropdown-menu">
-                  <li><a href="#" onclick="displayCreateDiv(false)">普通表单</a></li>
-                  <li><a href="#" onclick="displayCreateDiv(true)">项目表单</a></li>
+                  <li><a href="#" onclick="displayCreateDiv(false)">普通模板</a></li>
+                  <li><a href="#" onclick="displayCreateDiv(true)">项目模板</a></li>
                 </ul>
              </div>
 		
@@ -49,7 +49,7 @@
 			<table class="tablesorter table table-hover table-striped" id="templateListGrid">
 				<thead>
 		    		<tr>
-		    			<th>序号</th><th>名称</th><th>类型</th><th>流程</th><th>表单用户</th><th>操作</th>
+		    			<th>序号</th><th>名称</th><th>类型</th><th>流程</th><th>模板用户</th><th>操作</th>
 		    		</tr>
 		    	</thead>
 		    	<tbody id="templateBodyDiv">
@@ -63,12 +63,12 @@
 <div id="modifyTemplateDiv" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="tag modal" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h5 id="myModalLabel">修改表单</h5>
+    <h5 id="myModalLabel">修改模板</h5>
   </div>
   <div class="modal-body">
   	<form class="form-horizontal">
   		<div class="control-group" style="display: none;">
-		    <label class="control-label" for="input_id_m">表单ID：</label>
+		    <label class="control-label" for="input_id_m">模板ID：</label>
 		    <div class="controls">
 		   	    <input type="text" id="input_id_m" disabled="disabled"/>
 		    </div>
@@ -80,7 +80,7 @@
 		    </div>
 		</div>
 		<div class="control-group" style="display: none;">
-		    <label class="control-label" for="select_templateTypeId_m">表单类型：</label>
+		    <label class="control-label" for="select_templateTypeId_m">模板类型：</label>
 		    <div class="controls">
 		   	    <select id="select_templateTypeId_m" style= "width:220px;" disabled="disabled">
 				</select>
@@ -103,11 +103,11 @@
 
 
 
-<!-- 管理表单用户div -->
+<!-- 管理模板用户div -->
 <div id="templateUserDiv" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="tag modal" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h5 id="myModalLabel">管理表单用户</h5>
+    <h5 id="myModalLabel">管理模板用户</h5>
   </div>
   <div class="modal-body">
     <button class="btn btn-danger" data-toggle="modal" data-target='#addUserDiv'>添加用户</button>
@@ -154,20 +154,20 @@
 <div id="addTemplateDiv" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="tag modal" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h5 id="myModalLabel">创建表单</h5>
+    <h5 id="myModalLabel">创建模板</h5>
   </div>
   <input type='hidden' id="projectInvolve"/>
   <div class="modal-body">
   	<form class="form-horizontal">
   		<div class="control-group">
-		    <label class="control-label" for="input_name">表单名称：</label>
+		    <label class="control-label" for="input_name">模板名称：</label>
 		    <div class="controls">
 		      <input type="text" id="input_name" />
 		    </div>
 	  	</div>
 	  	
   		<div class="control-group">
-		    <label class="control-label" for="select_templateTypeId">表单类型：</label>
+		    <label class="control-label" for="select_templateTypeId">模板类型：</label>
 		    <div class="controls">
 		   	    <select  id="select_templateTypeId" onchange="onSelectTemplateType()" style="width:230px;">
 				</select>
@@ -207,11 +207,11 @@
   </div>
 </div>
 
-<!-- 表单邮件配置 -->
+<!-- 模板邮件配置 -->
 <div id="templateMailCfgDiv" class="modal large-modal hide fade" tabindex="-1" role="dialog" aria-labelledby="tag modal" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h5>表单动作邮件配置</h5>
+    <h5>模板动作邮件配置</h5>
   </div>
   <div class="modal-body">
   	<input type="hidden" id="template_id_mail"/>

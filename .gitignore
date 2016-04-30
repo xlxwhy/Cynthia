@@ -20,3 +20,4 @@ logs/
 hs_err_pid*
 /target
 /conf
+/bin/

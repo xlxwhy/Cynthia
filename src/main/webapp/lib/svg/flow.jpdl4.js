@@ -123,7 +123,7 @@ $.extend(true,myflow.config.tools.states,{
 		props : {
 			text: {name:'text', label: '显示', value:'', editor: function(){return new myflow.editors.textEditor();}, value:'任务'},
 			assignee: {name:'assignee', label: '用户', value:'', editor: function(){return new myflow.editors.inputEditor();}},
-			form: {name:'form', label : '表单', value:'', editor: function(){return new myflow.editors.inputEditor();}},
+			form: {name:'form', label : '模板', value:'', editor: function(){return new myflow.editors.inputEditor();}},
 			desc: {name:'desc', label : '描述', value:'', editor: function(){return new myflow.editors.inputEditor();}}
 		}}
 	});

@@ -179,7 +179,7 @@ public class TemplateController extends BaseController{
 	}
 	
 	/**
-	 * 获取该表单下该任务的bug字段 这种字段一般是多选引用类型
+	 * 获取该模板下该任务的bug字段 这种字段一般是多选引用类型
 	 * @param request
 	 * @param httpSession
 	 * @return
@@ -211,7 +211,7 @@ public class TemplateController extends BaseController{
 	}
 	
 	/**
-	 * 获取表单邮件配置
+	 * 获取模板邮件配置
 	 * @param request
 	 * @param httpSession
 	 * @return
@@ -254,7 +254,7 @@ public class TemplateController extends BaseController{
 	}
 
 	/**
-	 * 保存表单邮件配置
+	 * 保存模板邮件配置
 	 * @param request
 	 * @param httpSession
 	 * @return

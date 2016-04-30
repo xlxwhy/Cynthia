@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta name="Description" content="Cynthia项目缺陷管理系统，拥有表单流程化设计，可视化拖动布局等功能，提供项目管理，缺陷管理，，统计，查询等服务，是您项目上的好帮手！">
+	<meta name="Description" content="Cynthia项目缺陷管理系统，拥有模板流程化设计，可视化拖动布局等功能，提供项目管理，缺陷管理，，统计，查询等服务，是您项目上的好帮手！">
 	<meta name="Keywords" content="Cynthia,BUG管理,项目管理 ,缺陷管理,任务管理,BUG,缺陷,开源">
 	<link href="../lib/bootstrap2/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="../lib/g_bootstrap/css/google-bootstrap.css" rel="stylesheet" type="text/css">
@@ -25,7 +25,7 @@
 		{
 			if($("#allTemplate").val() === "")
 			{
-				alert("提交失败,请选择表单!");
+				alert("提交失败,请选择模板!");
 				return;
 			}
 			
@@ -51,7 +51,7 @@
 		function initAllTemplate()
 		{
 			var gridHtml = "";
-			gridHtml += "<option value= selected>--请选择导入表单--</option>";
+			gridHtml += "<option value= selected>--请选择导入模板--</option>";
 			$.ajax({
 				url: base_url + 'template/getAllTemplates.do',
 				dataType:'json',
@@ -129,7 +129,7 @@
 	     							<p style="color:red">说明：</p>
 	     							<p>1：可选择输入excel中sheet名字,不填默认为sheet1;</p>
 	     							<p>2：excel中列头至少包括如下字段：<b>[标题，正文，指派人，状态]</b>。指派人为邮箱名;</p>
-	     							<p>3：对于表单中其它字段excel列头对应字段名;</p>
+	     							<p>3：对于模板中其它字段excel列头对应字段名;</p>
 	     							<p>4：对于单选数据，excel中数据应为选项中文名;</p>
 	     							<p>5：可支持07，03版本excel;</p>
 	     							<p>6：导入成功与否信息会以邮箱形式给出;</p>

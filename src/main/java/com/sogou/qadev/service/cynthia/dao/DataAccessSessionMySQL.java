@@ -1151,7 +1151,7 @@ public class DataAccessSessionMySQL {
 	 */
 	public String[] queryDataIdArray(String sql) {
 		sql = CynthiaUtil.cancelGroupOrder(sql);
-		String[] sqlArray = sql.split("union");  //每个表单独处理，避免union组合将所有表都锁定
+		String[] sqlArray = sql.split("union");  //每个模板独处理，避免union组合将所有表都锁定
 		Connection conn = null;
 		Statement stat = null;
 		ResultSet rs = null;
@@ -1186,7 +1186,7 @@ public class DataAccessSessionMySQL {
 	 */
 	public Map<String, String> queryDataIdAndLastModifyTime(String sql) {
 		sql = CynthiaUtil.cancelGroupOrder(sql);
-		String[] sqlArray = sql.split("union");  //每个表单独处理，避免union组合将所有表都锁定
+		String[] sqlArray = sql.split("union");  //每个模板独处理，避免union组合将所有表都锁定
 		Connection conn = null;
 		Statement stat = null;
 		ResultSet rs = null;
@@ -1220,7 +1220,7 @@ public class DataAccessSessionMySQL {
 	 */
 	public Map<String, String> queryDataIdAndTemplate(String sql) {
 		sql = CynthiaUtil.cancelGroupOrder(sql);
-		String[] sqlArray = sql.split("union");  //每个表单独处理，避免union组合将所有表都锁定
+		String[] sqlArray = sql.split("union");  //每个模板独处理，避免union组合将所有表都锁定
 		Connection conn = null;
 		Statement stat = null;
 		ResultSet rs = null;
@@ -1579,7 +1579,7 @@ public class DataAccessSessionMySQL {
 	 * @description:get a new uuid
 	 * @date:2014-5-6 下午6:05:08
 	 * @version:v1.0
-	 * @param templateId 表单id
+	 * @param templateId 模板id
 	 * @return
 	 */
 	public synchronized String createUUID(String templateId) {

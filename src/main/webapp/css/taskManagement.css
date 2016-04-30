@@ -122,7 +122,7 @@ label, select, button, input[type="button"], input[type="reset"], input[type="su
 #topSubmitDiv
 {
 	position: fixed;
-	left: 34%;
+	left:240px;
 	top: 5px;
 	height: 40px;
 	z-index: 10001;

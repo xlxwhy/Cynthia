@@ -82,14 +82,14 @@ public class WebServiceController extends BaseController{
 				}
 
 				UUID templateId = DataAccessFactory.getInstance().createUUID(templateIdStr);
-				Template template = das.queryTemplate(templateId);  //得到表单
+				Template template = das.queryTemplate(templateId);  //得到模板
 				if (template == null) {
 					errorList.add(new Pair<String, String>(exportMapData.get("title"), "templateId is not set!"));
 					continue;
 				}
 				Flow flow = das.queryFlow(template.getFlowId());
 
-				Set<Field> allFields = eic.GetAllFields(template);//表单所有字段,除出废弃字段
+				Set<Field> allFields = eic.GetAllFields(template);//模板所有字段,除出废弃字段
 				
 				Pair<String, String> saveErrorPair = eic.saveSingleData(template, flow, allNeedFields, exportMapData);
 				if (saveErrorPair != null) {

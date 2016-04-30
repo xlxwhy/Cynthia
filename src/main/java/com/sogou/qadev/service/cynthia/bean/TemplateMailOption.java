@@ -14,7 +14,7 @@ import com.sogou.qadev.service.cynthia.service.ProjectInvolveManager;
 
 /**
  * @ClassName: TemplateMailOption
- * @Description: 表单邮件配置
+ * @Description: 模板邮件配置
  * @author: liming
  * @date: 2014-11-17 上午11:37:12
  */

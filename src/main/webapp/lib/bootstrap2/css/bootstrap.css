@@ -3440,6 +3440,8 @@ input[type="button"].btn-block {
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 }
 
+
+
 .btn-danger:hover,
 .btn-danger:focus,
 .btn-danger:active,
@@ -3816,6 +3818,7 @@ input[type="submit"].btn.btn-mini {
 .dropup .btn-large .caret {
   border-bottom-width: 5px;
 }
+
 
 .btn-primary .caret,
 .btn-warning .caret,

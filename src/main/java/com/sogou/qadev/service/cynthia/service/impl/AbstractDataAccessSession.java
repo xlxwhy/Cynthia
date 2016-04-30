@@ -687,7 +687,7 @@ abstract public class AbstractDataAccessSession implements DataAccessSession
 			if(!new TemplateAccessSessionMySQL().removeTemplateById(template.getId())) {//删除数据库
 				errorCode = ErrorCode.dbFail;
 			}else{
-				//设置data表以及data_log表相应表单数据 is_valid=0 
+				//设置data表以及data_log表相应模板数据 is_valid=0 
 				setValidDataOfTemplate(template.getId(), false);
 			}
 		}catch (Exception e)

@@ -174,14 +174,14 @@ public class QuitBugMoveController extends BaseController{
 		}
 		
 		if (templateIdStr == null || templateIdStr.length() == 0 ) {
-			return "表单不能为空";
+			return "模板不能为空";
 		}
 		UUID templateId = DataAccessFactory.getInstance().createUUID(templateIdStr);
 		
 		
 		Template template = das.queryTemplate(templateId);
 		if (template == null) {
-			return "无法找到该表单";
+			return "无法找到该模板";
 		}
 		Flow flow = das.queryFlow(template.getFlowId());
 		if (flow == null) {
@@ -249,7 +249,7 @@ public class QuitBugMoveController extends BaseController{
 		if (errorDataBuffer.length() > 0) {
 			return "转移失败，错误数据有：" + errorDataBuffer.toString();
 		}else {
-			//从表单中删除人员
+			//从模板中删除人员
 			Set<Right> allRights = flow.getRightSet();
 			Iterator<Right> iterator = allRights.iterator();
 			while (iterator.hasNext()) {
@@ -274,7 +274,7 @@ public class QuitBugMoveController extends BaseController{
 	}
 	
 	/**
-	 * @function：获取表单下某用户未关闭数据
+	 * @function：获取模板下某用户未关闭数据
 	 * @modifyTime：2013-12-4 下午5:13:21
 	 * @author：李明
 	 * @email: liming@sogou-inc.com

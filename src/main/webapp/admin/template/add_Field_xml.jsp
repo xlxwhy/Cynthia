@@ -135,7 +135,7 @@
 		if(das.addFieldColName(template.getId().getValue(), fieldColName, field.getId().getValue(),  FieldNameMapMySQL.getInstance().getFieldColNameType(field)))
 		{
 	FieldNameCache.getInstance().set(field.getId().getValue(), fieldColName);
-	//字段添加成功，再更新表单
+	//字段添加成功，再更新模板
 	ErrorCode errorCode = das.updateTemplate(template);
 	
 	if(errorCode.equals(ErrorCode.success)){

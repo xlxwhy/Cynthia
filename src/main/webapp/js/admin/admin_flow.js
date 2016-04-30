@@ -261,7 +261,7 @@ function bindEvents()
 
 $(function(){
 	bindEvents();
-	//初始化表单列表
+	//初始化模板列表
 	$("#flowListGrid").tablesorter({
 		headers: 
 		{ 

@@ -26,7 +26,7 @@
 			credits: {
 				enabled : true,
 				href : HOME_LINK,
-				text : "返回cynthia首页"
+				text : "返回首页"
 			},
 			//配置标题
 			title: {
@@ -35,7 +35,7 @@
 			},
 			//配置副标题
 			subtitle: {
-				text: '数据来源：cynthia',
+				text: '数据来源：MWT-Tracker',
 				y:30
 			},
 

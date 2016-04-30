@@ -210,7 +210,7 @@ public class TemplateImpl implements Template
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
-				System.err.println("init 表单出错");
+				System.err.println("init 模板出错");
 			}
 			//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -343,7 +343,7 @@ public class TemplateImpl implements Template
 			}
 			
 			
-			//初始化表单邮件配置
+			//初始化模板邮件配置
 			this.tmo.setTemplateId(id);
 			Node templateMailNode = XMLUtil.getSingleNode(templateNode, "mail");
 			if (templateMailNode != null) {
@@ -357,7 +357,7 @@ public class TemplateImpl implements Template
 				}
 			}
 			
-			//初始化表单配置
+			//初始化模板配置
 			Node templateConfigNode = XMLUtil.getSingleNode(templateNode, "config");
 			if (templateConfigNode != null) {
 				this.templateConfig.setIsProjectInvolve(XMLUtil.getSingleNodeTextContent(templateConfigNode, "isProjectInvolve").equals("true"));

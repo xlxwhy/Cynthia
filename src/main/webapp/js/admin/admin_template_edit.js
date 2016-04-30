@@ -1,5 +1,5 @@
 /*
- *@description 表单编辑所涉及的js
+ *@description 模板编辑所涉及的js
  *@author liuyanlei
  */
 var templateId = "";//3565 211744
@@ -282,7 +282,7 @@ function onInitTemplateEditComplete(response)
 	eval("var isError = " + $(rootNode).find("isError").text());
 	if(isError)
 	{
-		alert("表单初始化错误!");
+		alert("模板初始化错误!");
 		return;
 	}
 	
@@ -454,7 +454,7 @@ function drawEmptyTemplatePage()
 	initContainer();
 }
 
-//初始化要生成的表单字段
+//初始化要生成的模板字段
 function initSingleInputFieldHtml(field)
 {
 	var html = "<div class='box box-element ui-draggable' style='display: block;' fieldId="+field.id+">"

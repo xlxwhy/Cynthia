@@ -84,7 +84,7 @@ function initTemplateBugField(templateId,callback)
 		success: function(data){
 			$("#stat_task_bug_field").empty();
 			if(data.length == 0){
-				showInfoWin('error',"该表单下没有可统计趋势的字段!");
+				showInfoWin('error',"该模板下没有可统计趋势的字段!");
 				return;
 			}
 			$("#stat_task_bug_field").append("<option value=''>--请选择bug字段--</option>");
@@ -93,7 +93,7 @@ function initTemplateBugField(templateId,callback)
 			}
 			$("#stat_task_bug_field").val('');
 			enableSelectSearch();
-			//选择表单下所有任务
+			//选择模板下所有任务
 			initAllTemplateTask(templateId);
 			if(callback)
 				callback();
@@ -345,7 +345,7 @@ function saveStat()
 	
 	var templateId = $("#templates").val();
 	if(templateId === ""){
-		alert("请选择统计表单!");
+		alert("请选择统计模板!");
 		return;
 	}
 	

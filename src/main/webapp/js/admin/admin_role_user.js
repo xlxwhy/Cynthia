@@ -42,7 +42,7 @@ function onInitTemplateListAjax(rootNode)
 	templates = new Array();
 	$("#select_template").empty();
 	var gridHtml = "";
-	gridHtml += "<option value=\"\">--请选择表单--</option>";
+	gridHtml += "<option value=\"\">--请选择模板--</option>";
 	$(rootNode).find("templates").children("template").each(function(idx,node){
 		templates[idx] = new Object();
 		templates[idx].id = $(node).children("id").text();
@@ -65,7 +65,7 @@ function initFlowRoles()
 	var index = $("#select_template").val();
 	if(index == ""){
 		$("#role_div").hide();
-		alert("请选择表单");
+		alert("请选择模板");
 		return;
 	}
 	var flowId = templates[index].flowId;
@@ -185,7 +185,7 @@ function editRoleUsers(roleId){
 	var flowId = templates[index].flowId;
 	if(flowId == "")
 	{
-		alert("请选择表单！");
+		alert("请选择模板！");
 		return;
 	}
 	$("#role_id").val(roleId);
@@ -287,7 +287,7 @@ function addUserRight()
 	var roleId = $("#role_id").val();
 	if(flowId == "")
 	{
-		alert("请选择表单！");
+		alert("请选择模板！");
 		return;
 	}
 	$("#addUserDiv").modal('hide');

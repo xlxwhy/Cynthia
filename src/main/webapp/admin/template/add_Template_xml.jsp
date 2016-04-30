@@ -87,7 +87,7 @@
 	template.getTemplateConfig().setIsProjectInvolve(request.getParameter("projectInvolved") != null && request.getParameter("projectInvolved").equals("true"));
 	
 	if(template.getTemplateConfig().isProjectInvolve()){
-		//项目表单初始化 三列
+		//项目模板初始化 三列
 		template.addFieldRow(0, 3);
 		//添加字段 对应产品 对应项目
 		Field field = template.addField(Field.Type.t_selection, Field.DataType.dt_single);
@@ -116,7 +116,7 @@
 		
 		if(isCopyUserRight)
 		{
-			//添加复制表单人员信息
+			//添加复制模板人员信息
 			Flow flow = das.queryFlow(copyTemplate.getFlowId());
 			if(flow == null){
 				out.println(ErrorManager.getErrorXml(ErrorType.flow_not_found));
@@ -225,7 +225,7 @@
 	ErrorCode errorCode = das.updateTemplate(template);
 	if(errorCode.equals(ErrorCode.success)&&isSuccess){
 		das.updateCache(DataAccessAction.insert, template.getId().getValue(),template);
-		//创建表单人员添加权限
+		//创建模板人员添加权限
 		das.addUserTemplateRight(new String[]{template.getId().getValue()}, key.getUsername());
 		out.println(ErrorManager.getCorrectXml());
 	}else{

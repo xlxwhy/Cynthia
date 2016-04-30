@@ -195,10 +195,10 @@ List<TemplateSegmentTag> createTemplateSegmentTagList(NodeList nodeList, DataAcc
 {
 	List<TemplateSegmentTag> segmentTagList = new ArrayList<TemplateSegmentTag>(nodeList.getLength());
 
-	// 依次显示各张表单
+	// 依次显示各张模板
 	for( int itemplate = 0; nodeList != null && itemplate < nodeList.getLength(); itemplate++ )
 	{
-		// 取得表单的节点
+		// 取得模板的节点
 		Element element = (Element)nodeList.item( itemplate );
 		if( element.getNodeName().equals( "template" ) )
 		{
@@ -217,7 +217,7 @@ List<TemplateSegmentTag> createTemplateSegmentTagList(NodeList nodeList, DataAcc
 			
 			TemplateSegmentTag segmentTag = new TemplateSegmentTag();
 			
-			// 记录表单ID和NodeId
+			// 记录模板ID和NodeId
 			if( element.getAttribute( "id" ) != null )
 				segmentTag.id = DataAccessFactory.getInstance().createUUID( element.getAttribute( "id" ) );
 			
@@ -306,7 +306,7 @@ String createItemDescription(NodeList taskNodeList)
 		
 		if(name.equals("编号")
 				|| name.equals("节点")
-						|| name.equals("表单")
+						|| name.equals("模板")
 								|| name.equals("标题"))
 			continue;
 
@@ -452,7 +452,7 @@ String createItemTableRow(NodeList taskNodeList, boolean isNewTask, boolean hasA
 			continue;
 		}
 		
-		if(name.equals("表单"))
+		if(name.equals("模板"))
 		{
 			templateId = value;
 			continue;
@@ -622,7 +622,7 @@ void createTaskElement(Document document, Data task, Element taskElement, String
 	if(template != null)
 	{
 		Element templateElement = document.createElement("field");
-		templateElement.setAttribute("name", "表单");
+		templateElement.setAttribute("name", "模板");
 		templateElement.setAttribute("value", template.getFlowId().toString());
 		taskElement.appendChild( templateElement );
 	}

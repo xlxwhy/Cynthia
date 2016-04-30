@@ -146,7 +146,7 @@ if (dataIds == null)
 		Element displayNode = null;
 		Element orderNode = null;
 
-		// 约束在表单类型上
+		// 约束在模板类型上
 		if( tempNodeList != null && !tempNodeList.isEmpty() )
 		{
 			displayNode = ( Element )tempNodeList.get( 0 );
@@ -306,7 +306,7 @@ if (dataIds == null)
 	if(filter == null)
 		return;
 
-	//试图获取表单类型参数
+	//试图获取模板类型参数
 	if (request.getParameter("type") != null && request.getParameter("type").trim().length() > 0)
 		templateTypeId = DataAccessFactory.getInstance().createUUID(request.getParameter("type").trim());
 
@@ -316,7 +316,7 @@ if (dataIds == null)
 		Element templateTypeNode = (Element)filterDocument.getElementsByTagName( "templateType" ).item( 0 );
 		long filterStartTime = System.currentTimeMillis();
 		System.out.println("start filter:"+filter.getId() + "userName:" + username);
-		// 如果表单类型是环境变量
+		// 如果模板类型是环境变量
 		if( !"$current_template_type$".equals( templateTypeNode.getAttribute( "id" ) ) )
 		{
 			// 初始化环境变量

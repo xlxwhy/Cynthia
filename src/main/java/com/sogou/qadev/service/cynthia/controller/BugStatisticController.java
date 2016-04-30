@@ -211,7 +211,7 @@ public class BugStatisticController extends BaseController{
 		}else if (fieldIdStr.equals("statusId")) {
 			name += ":状态";
 		}else if (CommonUtil.isPosNum(fieldIdStr)) {
-			//表单字段
+			//模板字段
 			Field field = template.getField(DataAccessFactory.getInstance().createUUID(fieldIdStr));
 			if (field == null) {
 				return "";
@@ -254,7 +254,7 @@ public class BugStatisticController extends BaseController{
 				fieldNameMap.put(stat.getId().getValue(), stat.getName());
 			}
 		}else if (CommonUtil.isPosNum(fieldId)) {
-			//表单字段
+			//模板字段
 			dbColName = FieldNameCache.getInstance().getFieldName(fieldId, template.getId().getValue());
 			Field field = template.getField(DataAccessFactory.getInstance().createUUID(fieldId));
 			if (field == null) {
@@ -289,7 +289,7 @@ public class BugStatisticController extends BaseController{
 		//查询有效数据
 		sqlBuffer.append(sqlBuffer.indexOf("where") != -1 ? " and " : " where ").append(" is_valid = 1 ");
 		
-		//查询表单
+		//查询模板
 		sqlBuffer.append(" and templateId = ").append(template.getId().getValue() + " ");
 		
 		sqlBuffer.append(" group by ").append(dbColName);

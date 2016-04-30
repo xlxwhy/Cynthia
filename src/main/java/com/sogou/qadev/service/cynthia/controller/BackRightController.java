@@ -211,7 +211,7 @@ public class BackRightController extends BaseController{
 	@RequestMapping("/addTemplateRightUser.do")
 	public String addTemplateRightUser(@RequestParam("templateId") String templateId, HttpServletRequest request, HttpSession httpSession) throws Exception {
 		if (templateId == null || templateId.length() == 0) {
-			return "表单为空,添加失败!";
+			return "模板为空,添加失败!";
 		}else {
 			String[] userMails = request.getParameterValues("userMails[]");
 			if (das.addtemplateUserRight(templateId, userMails)) {
@@ -276,7 +276,7 @@ public class BackRightController extends BaseController{
 			}
 		}
 		
-		//自己创建的表单具有编辑权限
+		//自己创建的模板具有编辑权限
 		for (Flow flow : das.queryAllFlows()) {
 			if (flow != null && flow.getCreateUser() != null && flow.getCreateUser().equals(key.getUsername())) {
 				flowSet.add(flow.getId().getValue());

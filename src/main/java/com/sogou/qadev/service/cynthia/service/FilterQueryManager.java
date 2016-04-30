@@ -582,7 +582,7 @@ public class FilterQueryManager {
 	}
 
 	/**
-	 * @function：获取过滤器表单
+	 * @function：获取过滤器模板
 	 * @modifyTime：2013-11-11 下午9:15:52
 	 * @author：李明
 	 * @email: liming@sogou-inc.com

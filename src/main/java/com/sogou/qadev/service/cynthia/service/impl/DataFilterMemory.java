@@ -459,7 +459,7 @@ public class DataFilterMemory extends AbstractDataFilter
 		}
 		
 		String type = null;
-		List<String> tablesList = new ArrayList<String>();  //查询表单
+		List<String> tablesList = new ArrayList<String>();  //查询模板
 		String sqlWhereStr = "";
 		Map<String,String> orderFieldMap = new HashMap<String, String>();
 		String sql = "";

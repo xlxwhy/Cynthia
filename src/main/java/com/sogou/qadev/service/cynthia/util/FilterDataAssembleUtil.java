@@ -306,7 +306,7 @@ public class FilterDataAssembleUtil {
 		Template template = das.queryTemplate(task.getTemplateId());
 		if (template != null) {
 			Element templateElement = document.createElement("field");
-			templateElement.setAttribute("name", "表单");
+			templateElement.setAttribute("name", "模板");
 			templateElement.setAttribute("value", template.getFlowId()
 					.toString());
 			taskElement.appendChild(templateElement);

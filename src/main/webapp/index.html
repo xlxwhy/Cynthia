@@ -3,7 +3,7 @@
 <head>
 <title>Cynthia缺陷管理系统</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="Description" content="Cynthia项目缺陷管理系统，拥有表单流程化设计，可视化拖动布局等功能，提供项目管理，缺陷管理，，统计，查询等服务，是您项目上的好帮手！">
+<meta name="Description" content="Cynthia项目缺陷管理系统，拥有模板流程化设计，可视化拖动布局等功能，提供项目管理，缺陷管理，，统计，查询等服务，是您项目上的好帮手！">
 <meta name="Keywords" content="Cynthia,BUG管理,项目管理 ,缺陷管理,任务管理,BUG,缺陷,开源">
 <link href="lib/bootstrap2/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="lib/bootstrap2/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
@@ -29,18 +29,20 @@
 
 <div class="container-fluid">
 	<div id ="header-nav">
+
 	</div>
 	
 	<div class="row-fluid mid-toolbar affix">
 		<div class="span12 middle">
-		
-		<div class="left btn-group" style="margin-left:20px;width: 222px;">
-		   <button class="btn btn-danger span6" style="min-height:20px;height:30px;margin-right:0px;" id='openTemplate'>新&nbsp;&nbsp;建</button>
-		   <button id="createMenuDrop" style="height:30px;" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
-		      <span class="caret"></span>
-		   </button>
-		   <ul class="dropdown-menu" id="createBugMenu" style="overflow-y:scroll; min-width:130px;">
-		   </ul>
+		<div class="left" style="text-align:right">
+			<div class="btn-group" style="">
+			   <button class="btn btn-danger span6" style="min-height:20px;height:30px;width:60px;margin-right:0px;" id='openTemplate'>新&nbsp;&nbsp;建</button>
+			   <button id="createMenuDrop" style="height:30px;" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
+			      <span class="caret"></span>
+			   </button>
+			   <ul class="dropdown-menu" id="createBugMenu" style="overflow-y:scroll; min-width:90px;">
+			   </ul>
+			</div>
 		</div>
 			<div class="pull-left">
 				<div>
@@ -115,7 +117,8 @@
 	</div>
 	<div class="row-fluid main-content affix">
 		<div class="left left-tree" id='left-tree'>
-			<div class='left-tree-top' aria-labelledby='左侧头部导航'>
+			<div class='left-tree-top' aria-labelledby='左侧头部导航' >
+			    &nbsp;<i class="icon-arrow-down"></i><div style="line-height:30px;display:inline;">过滤器</div>
 				<i class="icon-backward" id='hideLeftTreeIcon' title="收起" onclick="hideLeftTreeIconClick()"></i>
 			</div>
 			<div class="left left-nav">
@@ -131,7 +134,10 @@
 				
 				<div id ="favorate_tag">
 					<ul class="nav nav-list">
-						<li class="my-tag" id="my-tag"><a href="#" id="my-tag-link"><i class="icon-cog pull-right" id='tagConfigIcon' title="配置标签"></i><i class="icon-arrow-right" id='tagExpandIcon'></i>我的标签</a>
+						<li class="my-tag" id="my-tag">
+						    <a href="#" id="my-tag-link">
+						      <i class="icon-cog pull-right" id='tagConfigIcon' title="配置标签"></i>
+						      <i class="icon-arrow-right" id='tagExpandIcon'></i>我的标签</a>
 							<ul id="left-tag-list" class="nav nav-list hide">
 							</ul>
 						</li>

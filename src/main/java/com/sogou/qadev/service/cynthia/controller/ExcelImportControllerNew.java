@@ -227,7 +227,7 @@ public class ExcelImportControllerNew extends BaseController {
 		result.append(this.getHtmlFoot());
 
 		MailSender mailSender = new MailSender();
-		mailSender.sendMail("[Cynthia][数据表单导入]导入Excel数据信息", result.toString(), receivers);
+		mailSender.sendMail("[Cynthia][数据模板导入]导入Excel数据信息", result.toString(), receivers);
 	}
 
 	/**
@@ -457,13 +457,13 @@ public class ExcelImportControllerNew extends BaseController {
 		List<ErrorInfo> errorInfoList = new ArrayList<ErrorInfo>();  //所有错误信息
 		boolean flag = false; //添加过程是否出错
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		Map<String, Integer> excelValueNum = new HashMap<String, Integer>();  //excel表单【字段名，列数】对应
+		Map<String, Integer> excelValueNum = new HashMap<String, Integer>();  //excel模板【字段名，列数】对应
 
 		UUID templateId = DataAccessFactory.getInstance().createUUID(templateIdStr);
-		Template template = das.queryTemplate(templateId);  //得到表单
+		Template template = das.queryTemplate(templateId);  //得到模板
 		Flow flow = das.queryFlow(template.getFlowId());
 
-		Set<Field> allFields = GetAllFields(template);//表单所有字段,除出废弃字段
+		Set<Field> allFields = GetAllFields(template);//模板所有字段,除出废弃字段
 
 		String addUser = (String)session.getAttribute("userName");
 		DataAccessSession das = DataAccessFactory.getInstance().createDataAccessSession(addUser, DataAccessFactory.magic);
@@ -517,7 +517,7 @@ public class ExcelImportControllerNew extends BaseController {
 
 				if (needFieldName!=null && needFieldName.length()>0) {
 					ErrorInfo errorInfo = new ErrorInfo();
-					errorInfo.setErrorDescription("某些字段在表单中无法找到如：【"+needFieldName+"】,全部录入失败");
+					errorInfo.setErrorDescription("某些字段在模板中无法找到如：【"+needFieldName+"】,全部录入失败");
 					errorInfoList.add(errorInfo);
 					flag = false;
 					isAllNeedFieldsIn = false;
@@ -801,7 +801,7 @@ public class ExcelImportControllerNew extends BaseController {
 			return new Pair<String, String>(mapData.get("title"),"数据库操作失误");
 		}
 		
-		Set<Field> allFields = GetAllFields(template);//表单所有字段,除出废弃字段
+		Set<Field> allFields = GetAllFields(template);//模板所有字段,除出废弃字段
 		
 		for (Field field : allFields) {
 			if (mapData.containsKey(field.getName())) {

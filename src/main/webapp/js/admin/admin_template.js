@@ -264,19 +264,19 @@ function addTemplate()
 	var name = $.trim($("#input_name").val());
 	if(name == "")
 	{
-		alert("请输入表单名称！");
+		alert("请输入模板名称！");
 		return;
 	}
 	
 	if(checkTemplateName(name)){
-		alert('己存在该名称表单,请修改!');
+		alert('己存在该名称模板,请修改!');
 		return;
 	}
 	
 	var templateTypeId = $("#select_templateTypeId").val();
 	if(templateTypeId == "")
 	{
-		alert("请选择表单类型！");
+		alert("请选择模板类型！");
 		return;
 	}
 	
@@ -315,11 +315,11 @@ function onCompleteAddTemplate(response)
 	eval("var isError = " + $(response).find('isError').text());
 	if(isError)
 	{
-		alert("添加表单失败！");
+		alert("添加模板失败！");
 		return;
 	}
 	$("#addTemplateDiv").modal('hide');
-	showInfoWin('success','表单添加成功!');
+	showInfoWin('success','模板添加成功!');
 	initTemplateList();
 }
 
@@ -349,7 +349,7 @@ function displayModifyDiv(templateId,flowId)
 }
 
 /**
- * 表单邮件配置
+ * 模板邮件配置
  * @param templateId
  */
 function displayMailCfgDiv(templateId,templateName){
@@ -377,7 +377,7 @@ function initTemplateMail(templateId,templateName){
 			$("input[type=radio][name=sendMail][value='" + data.templateMailOptions.sendMail + "']").attr('checked','checked');
 			$(".s_m_div").css('display',$("input[type=radio][name=sendMail][value=true]").is(':checked') ? '' : 'none');
 			//主题
-			$("#mailSubject").val(data.templateMailOptions.mailSubject || '[Cynthia][' + templateName + ']数据指派邮件');
+			$("#mailSubject").val(data.templateMailOptions.mailSubject || '[MWT-Tracker][' + templateName + ']数据指派邮件');
 			//动作
 			var $actionsUl = $("#actions_ul");
 			$actionsUl.empty();
@@ -433,7 +433,7 @@ function modifyTemplate()
 	var name = $.trim($("#input_name_m").val());
 	if(name == "")
 	{
-		alert("请输入表单名称！");
+		alert("请输入模板名称！");
 		return;
 	}
 	
@@ -462,7 +462,7 @@ function onCompleteModifyTemplate(response)
 	eval("var isError = " + isErrorText);
 	if(isError)
 	{
-		alert("修改表单失败！");
+		alert("修改模板失败！");
 		return;
 	}
 	initTemplateList();
@@ -488,7 +488,7 @@ function onCompleteRemoveTemplate(request)
 	
 	if(isError)
 	{
-		alert("删除表单失败！");
+		alert("删除模板失败！");
 		return;
 	}
 	initTemplateList();
@@ -644,7 +644,7 @@ function onInitUserListAjax(rootNode)
 $(function(){
 	enableSelectSearch();
 	bindEvents();
-	//初始化表单列表
+	//初始化模板列表
 	$("#templateListGrid").tablesorter({
 		headers: 
 		{ 

@@ -451,7 +451,7 @@ function onCompleteInitMountScript(response)
 	$("#action").empty();
 	$("#stat").empty();
 	
-	//初始化已经加载的表单
+	//初始化已经加载的模板
 	$("#mountTemplates > tbody >tr").eq(0).nextAll().remove();
 	$.each(mountTemplates,function(templateId,templateName){
 		var trHTML = "<tr>";
@@ -461,7 +461,7 @@ function onCompleteInitMountScript(response)
 		$("#mountTemplates > tbody").append(trHTML);
 	});
 	
-	//初始化所有表单
+	//初始化所有模板
 	$("#template").empty();
 	$("#template").append("<option value=''>--请选择--</option>");
 	$.each(allTemplates,function(templateId,templateName){

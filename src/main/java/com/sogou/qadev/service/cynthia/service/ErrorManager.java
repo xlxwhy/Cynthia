@@ -8,13 +8,13 @@ public class ErrorManager {
 		//数据库
 		database_update_error,   //数据库更新异常
 
-		//表单
-		template_not_found, //表单无法到找
+		//模板
+		template_not_found, //模板无法到找
 		field_update_error, //字段修改错误
-		copy_template_not_fount, //复制的表单无法找到
+		copy_template_not_fount, //复制的模板无法找到
 		fieldcolName_error,       //无法在数据库中添加列名
 		field_option_not_fount,  //无法找到字段选项名
-		template_xml_error,   //表单解析xml发生错误
+		template_xml_error,   //模板解析xml发生错误
 		//流程
 		flow_not_found,  //流程无法找到
 		stat_not_found,  //状态无法找到
@@ -51,7 +51,7 @@ public class ErrorManager {
 		}else if (errorType.equals(ErrorType.database_update_error)) {
 			errorInfo = "数据库更新异常!";
 		}else if (errorType.equals(ErrorType.template_not_found)) {
-			errorInfo = "表单无法找到!";
+			errorInfo = "模板无法找到!";
 		}else if (errorType.equals(ErrorType.data_not_found_inDb)) {
 			errorInfo = "数据无法找到或数据己被删除!";
 		}else if (errorType.equals(ErrorType.time_parse_error)) {
@@ -63,7 +63,7 @@ public class ErrorManager {
 		}else if (errorType.equals(ErrorType.field_update_error)) {
 			errorInfo = "字段修改发生错误!";
 		}else if (errorType.equals(ErrorType.copy_template_not_fount)) {
-			errorInfo = "复制的原表单无法找到!";
+			errorInfo = "复制的原模板无法找到!";
 		}else if (errorType.equals(ErrorType.fieldcolName_error)) {
 			errorInfo = "无法在数据库中添加列名!";
 		}else if (errorType.equals(ErrorType.field_option_not_fount)) {
@@ -71,7 +71,7 @@ public class ErrorManager {
 		}else if (errorType.equals(ErrorType.user_not_fount)) {
 			errorInfo = "用户无法找到!";
 		}else if (errorType.equals(ErrorType.template_xml_error)) {
-			errorInfo = "表单解析xml发生错误!";
+			errorInfo = "模板解析xml发生错误!";
 		}else if (errorType.equals(ErrorType.user_not_login)) {
 			errorInfo = "用户没有登陆!";
 		}else if (errorType.equals(ErrorType.not_read_right)) {

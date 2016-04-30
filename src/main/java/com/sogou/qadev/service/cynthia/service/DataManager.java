@@ -557,7 +557,7 @@ public class DataManager
 	 * @modifyTime：2013-9-9 下午6:22:29
 	 * @author：李明
 	 * @email: liming@sogou-inc.com
-	 * @param templateTypeId templateTypeId 为空时为查询所有表单
+	 * @param templateTypeId templateTypeId 为空时为查询所有模板
 	 * @param das
 	 * @return
 	 */
@@ -583,7 +583,7 @@ public class DataManager
 				continue;
 			
 			if (ConfigManager.getProjectInvolved()) {
-				//项目管理 与表单创建者同公司可以查看 
+				//项目管理 与模板创建者同公司可以查看 
 				if (companyUsers.contains(template.getCreateUser())) {
 					templateSet.add(template);
 				}
@@ -624,7 +624,7 @@ public class DataManager
 	}
 
 	/**
-	 * @description:查询用户可查看权限表单
+	 * @description:查询用户可查看权限模板
 	 * @date:2014-9-3 下午2:30:13
 	 * @version:v1.0
 	 * @param templateTypeId
@@ -693,7 +693,7 @@ public class DataManager
 	}
 	
 	/**
-	 * @description:查询用户可查看权限表单
+	 * @description:查询用户可查看权限模板
 	 * @date:2014-9-3 下午2:30:13
 	 * @version:v1.0
 	 * @param templateTypeId
@@ -770,7 +770,7 @@ public class DataManager
 			}
 			
 			if (ConfigManager.getProjectInvolved()) {
-				//项目管理 与表单创建者同公司可以查看 
+				//项目管理 与模板创建者同公司可以查看 
 				if ((companyUsers.contains(template.getCreateUser()))) {
 					templateSet.add(template);
 				}

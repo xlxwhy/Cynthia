@@ -232,7 +232,7 @@
 	}
 
 	/*
-		modified by liu yanlei 2012.3 增加针对表单动作的筛选功能
+		modified by liu yanlei 2012.3 增加针对模板动作的筛选功能
 	*/
 
 	String queryTemplateNodeHTML(DataAccessSession das, UUID templateId, Map<String, Set<Object>> whereFieldMap,
@@ -367,7 +367,7 @@
 		actionTimeRangeField.setType("timestamp");
 		fieldMap.put("action_time_range",actionTimeRangeField);
 
-		//该表单对应的动作
+		//该模板对应的动作
 		CommonField actionField = new CommonField();
 		actionField.setId("action_id");
 		actionField.setName("动作");

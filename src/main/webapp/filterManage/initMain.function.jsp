@@ -174,11 +174,11 @@
 					assignUserSet.add(right.getUsername());
 				}
 				
-				//表单中的所有指派人员
+				//模板中的所有指派人员
 				assignUserSet.addAll(Arrays.asList(das.queryTemplateAssignUsers(template.getId())));
 				allAssignUserList = das.queryAllUserInfo(assignUserSet.toArray(new String[0]));
 				
-				//普通表单增加角色查询，项目表单不加
+				//普通模板增加角色查询，项目模板不加
 				Role[] rolesArray = flow.getRoles();
 				for(Role role : rolesArray)
 				{
@@ -202,7 +202,7 @@
 			for(Right right : allFlowRights){
 				createUserSet.add(right.getUsername());
 			}
-			//表单中的所有创建人员
+			//模板中的所有创建人员
 			createUserSet.addAll(Arrays.asList(das.queryTemplateCreateUsers(template.getId())));
 			
 			List<UserInfo> allCreateUserList = das.queryAllUserInfo(createUserSet.toArray(new String[0]));
@@ -366,7 +366,7 @@
 		actionTimeRangeField.setType("timestamp");
 		fieldMap.put("action_time_range",actionTimeRangeField);
 
-		//该表单对应的动作
+		//该模板对应的动作
 		CommonField actionField = new CommonField();
 		actionField.setId("action_id");
 		actionField.setName("动作");
@@ -830,7 +830,7 @@
 		actionTimeRangeField.setType("timestamp");
 		fieldMap.put("action_time_range",actionTimeRangeField);
 
-		//该表单对应的动作
+		//该模板对应的动作
 		CommonField actionField = new CommonField();
 		actionField.setId("action_id");
 		actionField.setName("动作");
