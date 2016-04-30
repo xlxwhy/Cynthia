@@ -23,7 +23,7 @@
 		  <div style="text-align:left;width:600px;background-color:#DDD;" > 
 			<div id="logo_header" style="background-color:#999;text-align:left;padding-left:40px;line-height:50px;color:#DDDDDD;font-size:36px;">
 			    <!-- <img alt="" src="../images/mwt_03.png"> -->
-			    MWT-Tracker&nbsp;&nbsp;&nbsp;
+			    Tracker&nbsp;&nbsp;&nbsp;
 			</div>
 			
 			<div style="padding-left:150px;">

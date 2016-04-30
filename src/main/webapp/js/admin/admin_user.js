@@ -112,8 +112,8 @@ function changeStat(user,changeToStat)
 				{
 					//如果帐户重新恢复正常,邮件通知
 					var params = "sendMailReceivers=" + getSafeParam(user);
-					params += "&sendMailSubject=" + getSafeParam("[MWT-Tracker]帐户激活通知");
-					params += "&sendMailContent=" + getSafeParam("您在MWT-Tracker中的帐户己激活！<br/><a href='" + WEB_ROOT_URL+ "'>立即进入</a>");
+					params += "&sendMailSubject=" + getSafeParam("[Tracker]帐户激活通知");
+					params += "&sendMailContent=" + getSafeParam("您在Tracker中的帐户己激活！<br/><a href='" + WEB_ROOT_URL+ "'>立即进入</a>");
 
 					$.ajax({
 						url : base_url + 'mail/executeSendMail.jsp',
@@ -321,8 +321,8 @@ function addUser()
 			
 			//新建用户成功，发送邮件通知
 			var params = "sendMailReceivers=" + getSafeParam(email);
-			params += "&sendMailSubject=" + getSafeParam("[MWT-Tracker]帐户新建通知");
-			params += "&sendMailContent=" + getSafeParam("管理员为您新建了MWT-Tracker帐户！<br/>用户名：" + email + "<br/>密码:" + password + "<br/><a href='" + WEB_ROOT_URL+ "'>点击进入MWT-Tracker系统</a>");
+			params += "&sendMailSubject=" + getSafeParam("[Tracker]帐户新建通知");
+			params += "&sendMailContent=" + getSafeParam("管理员为您新建了Tracker帐户！<br/>用户名：" + email + "<br/>密码:" + password + "<br/><a href='" + WEB_ROOT_URL+ "'>点击进入Tracker系统</a>");
 
 			$.ajax({
 				url : base_url + 'mail/executeSendMail.jsp',

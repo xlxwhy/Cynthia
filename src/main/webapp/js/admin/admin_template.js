@@ -377,7 +377,7 @@ function initTemplateMail(templateId,templateName){
 			$("input[type=radio][name=sendMail][value='" + data.templateMailOptions.sendMail + "']").attr('checked','checked');
 			$(".s_m_div").css('display',$("input[type=radio][name=sendMail][value=true]").is(':checked') ? '' : 'none');
 			//主题
-			$("#mailSubject").val(data.templateMailOptions.mailSubject || '[MWT-Tracker][' + templateName + ']数据指派邮件');
+			$("#mailSubject").val(data.templateMailOptions.mailSubject || '[Tracker][' + templateName + ']数据指派邮件');
 			//动作
 			var $actionsUl = $("#actions_ul");
 			$actionsUl.empty();

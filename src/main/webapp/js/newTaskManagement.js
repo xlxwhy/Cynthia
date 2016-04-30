@@ -4096,7 +4096,7 @@ function sendMailSubmit()
 	sendMailContent += "</body><html>";
 
 	var params = "sendMailReceivers=" + getSafeParam(sendMailReceivers);
-	params += "&sendMailSubject=" + getSafeParam("[MWT-Tracker][" + taskId + "]有数据需要您的处理意见，请关注并处理");
+	params += "&sendMailSubject=" + getSafeParam("[Tracker][" + taskId + "]有数据需要您的处理意见，请关注并处理");
 	params += "&sendMailContent=" + getSafeParam(sendMailContent);
 
 	$("#mail_send_ok").disabled = true;

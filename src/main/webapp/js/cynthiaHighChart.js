@@ -35,7 +35,7 @@
 			},
 			//配置副标题
 			subtitle: {
-				text: '数据来源：MWT-Tracker',
+				text: '数据来源：Tracker',
 				y:30
 			},
 

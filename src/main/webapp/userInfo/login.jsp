@@ -12,7 +12,7 @@
 	<script type="text/javascript" src="../js/util.js"></script>
 	<script type="text/javascript" src="../js/user/userinfo.js"></script>
 	<script type="text/javascript" src="../js/md5.js"></script>
-	<title>MWT-Tracker登陆</title>
+	<title>Tracker登陆</title>
 </head>
 
 <%
@@ -36,7 +36,7 @@
 
 		  <div style="text-align:center;width:600px;background-color:#DDD;" > 
 			<div id=" " style="background-color:#999;text-align:left;padding-left:40px;line-height:50px;color:#DDDDDD;font-size:36px;">
-			    <!-- <img alt="" src="../images/mwt_03.png"> --> MWT-Tracker&nbsp;&nbsp;&nbsp;
+			    <!-- <img alt="" src="../images/mwt_03.png"> --> Tracker&nbsp;&nbsp;&nbsp;
 			</div>
 			<div style=" ">
 			<div class="control-group">

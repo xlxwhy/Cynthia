@@ -49,7 +49,7 @@
 		<link>
 			<name>deploy</name>
 			<type>2</type>
-			<location>F:/XDEV/MWT/MWT-Tracker/Cynthia/target/cynthia</location>
+			<location>F:/XDEV/MWT/Tracker/Cynthia/target/cynthia</location>
 		</link>
 	</linkedResources>
 </projectDescription>

@@ -15,7 +15,7 @@ function initFilterPageFirst(filterId,filterName)
 	$("#template_user_restTemplateUserSelect").empty();
 	$("#template_user_selectedTemplateUserSelect").empty();
 	$("#timerName,#nameList,#ccList,#bccList").val("");
-	$("#mailTitle").val("[MWT-Tracker][" + filterName + "]");
+	$("#mailTitle").val("[Tracker][" + filterName + "]");
 	//初始化月份
 	$("#timer_div").hide();	
 	$("#timer_no").attr("checked",true);
@@ -77,7 +77,7 @@ function onCompleteInitFilterPage(data,textStatus)
 	var filterNameNode = $(queryNode).find("filterName");
 	$("#input_filter_name").val("");
 	$("#input_filter_name").val($(filterNameNode).text());
-	document.title = $(filterNameNode).text()+'-MWT-Tracker';
+	document.title = $(filterNameNode).text()+'-Tracker';
 	//设置templateType
 	var templateTypeId = $(queryNode).find("templateType").attr("id");
 	$("#templateTypeSelect").val(templateTypeId);

@@ -1450,7 +1450,7 @@ function logout()
 	deleteCookie('id');
 	deleteCookie('login_username');
 	deleteCookie('login_nickname');
-	if(!window.confirm("确定要退出MWT-Tracker吗？"))
+	if(!window.confirm("确定要退出Tracker吗？"))
 		return;
 	window.location = base_url + 'user/logout.do?isReturn=true&targetUrl=' + encodeURIComponent(window.location.href);
 }
@@ -1633,9 +1633,9 @@ function addHeadHtml(userInfo)
 	//专心专注专业
 	headHtml += "";
 	
-	//headHtml += "<div class='left' style=\"text-align:center;background:#FFF url('images/mwt.png') no-repeat 0 0 fixed;\" ><a class=\"brand\" href='" + base_url + "index.html' style=\"font-size:16px;color:rgb(216, 74, 56);font-weight:bold;line-height:30px; \">MWT-Tracker</a> </div>";
-	//headHtml += "<div class='left' style=\"text-align:center;\" ><a class=\"brand\" href='" + base_url + "index.html' style=\"font-size:16px;color:rgb(216, 74, 56);font-weight:bold;line-height:30px; \"><img src='" + base_url + "images/mwt_03.png' width='80'   />MWT-Tracker</a> </div>";
-	headHtml += "<div class='left' style=\"text-align:center;\" ><a class=\"brand\" href='" + base_url + "index.html' style=\"font-size:16px;color:rgb(216, 74, 56);font-weight:bold;line-height:30px;padding-left:40px;font-size:24px; \">MWT-Tracker</a> </div>";
+	//headHtml += "<div class='left' style=\"text-align:center;background:#FFF url('images/mwt.png') no-repeat 0 0 fixed;\" ><a class=\"brand\" href='" + base_url + "index.html' style=\"font-size:16px;color:rgb(216, 74, 56);font-weight:bold;line-height:30px; \">Tracker</a> </div>";
+	//headHtml += "<div class='left' style=\"text-align:center;\" ><a class=\"brand\" href='" + base_url + "index.html' style=\"font-size:16px;color:rgb(216, 74, 56);font-weight:bold;line-height:30px; \"><img src='" + base_url + "images/mwt_03.png' width='80'   />Tracker</a> </div>";
+	headHtml += "<div class='left' style=\"text-align:center;\" ><a class=\"brand\" href='" + base_url + "index.html' style=\"font-size:16px;color:rgb(216, 74, 56);font-weight:bold;line-height:30px;padding-left:40px;font-size:24px; \">Tracker</a> </div>";
     
 	//搜索框
 	if(judgeNeedSearch())
