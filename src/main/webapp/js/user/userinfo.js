@@ -64,7 +64,7 @@ function checkUser()
 				$("#userMail").focus();
 				return;
 			}else {
-				$("#mailInfo").text("邮箱名可用");
+				$("#mailInfo").html("<span style='color:#5bb75b;'>邮箱名可用</span>");
 			}
 		}
 	});

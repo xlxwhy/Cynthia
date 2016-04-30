@@ -1634,7 +1634,8 @@ function addHeadHtml(userInfo)
 	headHtml += "";
 	
 	//headHtml += "<div class='left' style=\"text-align:center;background:#FFF url('images/mwt.png') no-repeat 0 0 fixed;\" ><a class=\"brand\" href='" + base_url + "index.html' style=\"font-size:16px;color:rgb(216, 74, 56);font-weight:bold;line-height:30px; \">MWT-Tracker</a> </div>";
-	headHtml += "<div class='left' style=\"text-align:center;\" ><a class=\"brand\" href='" + base_url + "index.html' style=\"font-size:16px;color:rgb(216, 74, 56);font-weight:bold;line-height:30px; \"><img src='" + base_url + "images/mwt.png' width='160'   /></a> </div>";
+	//headHtml += "<div class='left' style=\"text-align:center;\" ><a class=\"brand\" href='" + base_url + "index.html' style=\"font-size:16px;color:rgb(216, 74, 56);font-weight:bold;line-height:30px; \"><img src='" + base_url + "images/mwt_03.png' width='80'   />MWT-Tracker</a> </div>";
+	headHtml += "<div class='left' style=\"text-align:center;\" ><a class=\"brand\" href='" + base_url + "index.html' style=\"font-size:16px;color:rgb(216, 74, 56);font-weight:bold;line-height:30px;padding-left:40px;font-size:24px; \">MWT-Tracker</a> </div>";
     
 	//搜索框
 	if(judgeNeedSearch())

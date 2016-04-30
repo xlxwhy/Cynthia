@@ -557,7 +557,7 @@ public class StatisticerManager
 		
 		Map<String, String> orderFieldMap = new HashMap<String, String>();
 		
-		//查询任务下的缺陷bugId
+		//查询任务下的问题bugId
 		List<String> tablesList = new ArrayList<String>();
 		tablesList.add(templateId.getValue());
 		Set<String> queryFieldSet = new HashSet<String>();
@@ -575,7 +575,7 @@ public class StatisticerManager
 		List<Map<String , String>> allIdMap = DbPoolConnection.getInstance().getResultSetListBySql(idSql);
 		StringBuffer idBuffer = new StringBuffer();
 		
-		Template bugTemplate = null;  //任务对应缺陷bugId,目前默认任务与bug一对一关系 
+		Template bugTemplate = null;  //任务对应问题bugId,目前默认任务与bug一对一关系 
 		for (Map<String, String> map : allIdMap) {
 			for (String value : map.values()) {
 				if (value == null) 

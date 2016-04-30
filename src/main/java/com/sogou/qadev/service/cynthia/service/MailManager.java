@@ -81,13 +81,12 @@ public class MailManager {
 			}
             
             //创建一个程序与邮件服务器的通信
-            Session mailConnection = Session.getInstance(props,null);
-            Message msg = new MimeMessage(mailConnection);
+            Session session = Session.getInstance(props);
+            Message msg = new MimeMessage(session);
                                 
             //设置发送人和接受人
-            Address sender = new InternetAddress(props.getProperty("mail.user"));
-            //单个接收人
-            //Address receiver = new InternetAddress("xxx@163.com");
+            Address sender = new InternetAddress(props.getProperty("mail.from"));
+ 
             //多个接收人
             StringBuffer buffer = new StringBuffer();
             for (String reciever : recievers) {
@@ -105,7 +104,7 @@ public class MailManager {
                 }
             }
             
-            msg.setRecipients(Message.RecipientType.TO, toUserSet.toArray(new InternetAddress[0]));
+            msg.setRecipients(MimeMessage.RecipientType.TO, toUserSet.toArray(new InternetAddress[0]));
             
             //设置邮件主题
             msg.setSubject(MimeUtility.encodeText(subject, "UTF-8", "B"));   //中文乱码问题
@@ -116,7 +115,8 @@ public class MailManager {
             Multipart multipart = new MimeMultipart(); 
             multipart.addBodyPart( messageBodyPart ); 
             msg.setContent(multipart);
-                                
+         
+    		session.setDebug(true);        
             /**********************发送附件************************/
 //	            //新建一个MimeMultipart对象用来存放多个BodyPart对象
 //	            Multipart mtp=new MimeMultipart();
@@ -141,9 +141,10 @@ public class MailManager {
 
             //先进行存储邮件
             msg.saveChanges();
-            Transport trans = mailConnection.getTransport(props.getProperty("mail.protocal"));
+            Transport trans = session.getTransport(props.getProperty("mail.protocal"));
+            
             //邮件服务器名,用户名，密码
-            trans.connect(props.getProperty("mail.smtp.host"), props.getProperty("mail.user"),  props.getProperty("mail.pass"));
+            trans.connect(props.getProperty("mail.user"),  props.getProperty("mail.pass"));
             trans.sendMessage(msg, msg.getAllRecipients());
             
             //关闭通道
@@ -153,7 +154,7 @@ public class MailManager {
             return true;
         }catch(Exception e)
         {
-            System.err.println(e);
+            e.printStackTrace();
             return false;
         }
         finally{

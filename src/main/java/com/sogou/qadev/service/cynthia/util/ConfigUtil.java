@@ -94,7 +94,7 @@ public class ConfigUtil {
 	
 	public static Map<String, String> templateTypeIconMap = new HashMap<String, String>();
 	static {
-		templateTypeIconMap.put("缺陷", "Bug.gif");
+		templateTypeIconMap.put("问题", "Bug.gif");
 		templateTypeIconMap.put("任务", "Task.gif");
 		templateTypeIconMap.put("日常管理", "Daily.gif");
 	}

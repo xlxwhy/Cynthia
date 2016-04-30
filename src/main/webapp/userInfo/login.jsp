@@ -23,18 +23,24 @@
 %>
 
 <body onload="initUser('<%=targetUrl%>','<%=loginErrorInfo %>');" style="height:100%">
+<br>
+<br>
+<br>
+<br>
 
   <table  height="100%" width="100%" style="height:100%"><tr><td valign="center">
-	<div class="container-fluid" style="width:100%; ">
-		<div class="row-fluid" style="text-align:center;width:100%;">
+	<div class=" " style="width:100%; ">
+		<div class=" " style="text-align:center;width:100%;">
 	  
 		  <center>
 
 		  <div style="text-align:center;width:600px;background-color:#DDD;" > 
-			<div id="logo_header" style="background-color:#999;line-height:50px;color:#FFF;">
-			    <img alt="" src="../images/mwt.png"> 
+			<div id=" " style="background-color:#999;text-align:left;padding-left:40px;line-height:50px;color:#DDDDDD;font-size:36px;">
+			    <!-- <img alt="" src="../images/mwt_03.png"> --> MWT-Tracker&nbsp;&nbsp;&nbsp;
 			</div>
+			<div style=" ">
 			<div class="control-group">
+			<br><br>
 				    <div class="controls">
 				      <input type="text" id="user_mail_login" placeholder="邮箱">
 				    </div>
@@ -51,14 +57,14 @@
 				  <div class="control-group">
 					   <div class="controls">
 					      <div id="login">
-						      <button id="login_in_btn" class="btn btn-danger">登&nbsp;录</button>
-						      <a href="register.jsp" class="btn btn-success"  style="margin-left:10px;">注&nbsp;册</a> 
+						      <a href="register.jsp" class="btn "  style="margin-left:10px;">我要去注册</a> 
+						      <button id="login_in_btn" class="btn btn-success" style="margin-left:0px;">我要登录</button>
 				      	  </div>
 				       </div>
 				</div>
 				<br>
 			</div>
-	       
+	       </div>
 	     </center>
 	     </div>
 	     

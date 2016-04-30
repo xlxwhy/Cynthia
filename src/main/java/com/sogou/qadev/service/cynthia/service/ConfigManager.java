@@ -129,6 +129,7 @@ public class ConfigManager {
 		prop.put("mail.pass", properties.get("mail.pass"));
 		prop.put("mail.smtp.host", properties.get("mail.smtp.host"));
 		prop.put("mail.protocal", properties.get("mail.protocal"));
+		prop.put("mail.from", properties.get("mail.from"));
 		
 		return prop;
 	}
